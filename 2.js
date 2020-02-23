@@ -1,57 +1,51 @@
-document.getElementById("heshbon").style.color = "red";
-function checkIt(){
-var a = document.getElementById("user").value
-var b = document.getElementById("pass").value
-fireScreen = firebase.database().ref().child('login1/');
-fireScreen.once('value', function(snapshot) {
-  if ( a == snapshot.child("user").val() && b == snapshot.child("pass").val() ) { 
-	document.getElementById("notSign").style.visibility = "visible";
-	 document.getElementById("notSign").style.color = "green";
-	 document.getElementById("notSign").innerHTML = "כל הכבוד, התחברתם לחשבון, יש להמשיך ללשונית הבאה";
-	  document.getElementById("heshbon").style.color = "green";
-	  document.getElementById("heshbon").innerHTML = "ברוך הבא אדון פטה יקר, התחברת בהצלחה למערכת, להלן תדפיס חשבון עדכני";
-	  document.getElementById("hesbonpic").style.visibility = "visible";
-	  document.getElementById("nomoney").style.visibility = "visible";
-	  document.getElementById("nomoney").innerHTML = "לצערנו חשבון הבנק נמצא במינוס, אין באפשרותכם להעביר כסף. תוכלו להתנחם בכך שלפחות קיבלתם נקודה";
-	  document.getElementById("musar").style.visibility = "visible";
-	  document.getElementById("musar").innerHTML = "מוסר ההשכל בתרגיל זה: אין להשתמש בסיסמאות הקשורות אלינו בדרך כלשהי";
-	    document.getElementById("pointed").style.visibility = "visible";
-	  document.getElementById("nameTeam").style.visibility = "visible";
-	  document.getElementById("pointed").innerHTML = "אנא רשמו את שם קבוצתכם בתיבת הטקסט ולאחר מכן לחצו על הכפתור בכדי לקבל ניקוד. מיד לאחר מכן יש לעבור לשלב אחר";
-	   document.getElementById("pointb").style.visibility = "visible";
-}
-	else {
-		document.getElementById("notSign").style.color = "red";
-	  document.getElementById("notSign").style.visibility = "visible";
-	  document.getElementById("notSign").innerHTML = "נסו שוב"
-		document.getElementById("user").value = "";
-	 document.getElementById("pass").value = "";
+var buttonflag = 0;
+var namet;
+function send(){
+	if(buttonflag==0){
+	var nameteam = document.getElementById("nameTeam").value
+	namet = nameteam
+	var desc = document.getElementById("writequest").value
+	var firebaseRef = firebase.database().ref('hesber');
+		document.getElementById("pointed").style.color = "green";
+		 document.getElementById("pointed").innerHTML = "התגובה בבדיקה, יש להמתין לתשובה מהמדריך";
+	   document.getElementById("pointed").style.visibility = "visible";
+		document.getElementById("code").style.color = "green";
+		 document.getElementById("code").innerHTML = " כעת עליכם להמתין עד אשר תהיה תגובה מהמדריך,במידה ותשובתכם התקבלה, לצורך קבלת הנקודה יש להזין את הקוד שקיבלתם בתיבת הטקסט מטה";
+	   document.getElementById("code").style.visibility = "visible";
+	firebaseRef.child(nameteam).set(desc);
+	firebaseRef.child(nameteam+'res').set('בבדיקה');
 	}
-} )
+		else {
+			alert("כבר נשלחה תגובה, יש להמתין לתשובה מהמדריך");
+		}
+	buttonflag++
+	fireScreen = firebase.database().ref().child('hesber');
+	fireScreen.on('value', function(snapshot) {
+	fireScreen.on('value',function(datasnapshot){
+    document.getElementById("result").innerHTML = snapshot.child(nameteam+'res').val();
+	})
+})
+	
 }
-function point(){
-	var nameTeam = document.getElementById("nameTeam").value
-	var firebaseRef = firebase.database().ref('teams/');
+function point(){	
+var a = document.getElementById("entercode").value
+fireScreen = firebase.database().ref();
+fireScreen.once('value', function(snapshot) {
+  if ( a == snapshot.child("code2").val()) { 
+alert("כל הכבוד, קיבלתם נקודה! בעוד מספר שניות המערכת תבצע ריענון לדף, יש לעבור לתחנה הבאה")
+	 	var firebaseRef = firebase.database().ref('teams/');
 	firebaseRef.once('value', function(snapshot) {
-  if (snapshot.hasChild(nameTeam)) {
-	var a = snapshot.child(nameTeam).child('points').val();
-    firebaseRef.child(nameTeam).child("points").set(++a);
-	  document.getElementById("error").style.color = "green";
-	  document.getElementById("error").style.visibility = "visible";
-	  document.getElementById("error").innerHTML = "כל הכבוד, קיבלתם נקודה, בעוד מספר שניות המערכת תבצע ריענון לדף, יש לעבור לעמדה אחרת"
-	  document.getElementById("nameTeam").value = "";
+  if (snapshot.hasChild(namet)) {
+	var a = snapshot.child(namet).child('points').val();
+    firebaseRef.child(namet).child("points").set(++a);
 	  setTimeout(function () {
    window.location.reload(true);
 }, 8000);
-	
-  }
-  else {
-	  document.getElementById("error").style.color = "red";
-	  document.getElementById("error").style.visibility = "visible";
-	  document.getElementById("error").innerHTML = "מספר קבוצה לא נכון, יש להסתכל על המקרן ולנסות שוב"
-	  document.getElementById("nameTeam").value = "";
-	 
-	   }
-});
-
+}
+	else {
+alert("טעות, נסה שוב")
+	}
+} )
+}
+})
 }
