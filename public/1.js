@@ -34,8 +34,8 @@ function point(){
 	var firebaseRef = firebase.database().ref('teams/');
 	firebaseRef.once('value', function(snapshot) {
   if (snapshot.hasChild(nameTeam)) {
-	var a = snapshot.child(nameTeam).val();
-    firebaseRef.child(nameTeam).set(++a);
+	var a = snapshot.child(nameTeam).child('points').val();
+    firebaseRef.child(nameTeam).child("points").set(++a);
 	  document.getElementById("error").style.color = "green";
 	  document.getElementById("error").style.visibility = "visible";
 	  document.getElementById("error").innerHTML = "כל הכבוד, קיבלתם נקודה, בעוד מספר שניות המערכת תבצע ריענון לדף, יש לעבור לעמדה אחרת"

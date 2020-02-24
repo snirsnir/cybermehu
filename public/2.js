@@ -37,8 +37,8 @@ alert("כל הכבוד, קיבלתם נקודה! בעוד מספר שניות ה
 	 	var firebaseRef = firebase.database().ref('teams/');
 	firebaseRef.once('value', function(snapshot) {
   if (snapshot.hasChild(namet)) {
-	var a = snapshot.child(namet).val();
-    firebaseRef.child(namet).set(++a);
+	var a = snapshot.child(namet).child('points').val();
+    firebaseRef.child(namet).child("points").set(++a);
 	  setTimeout(function () {
    window.location.reload(true);
 }, 8000);

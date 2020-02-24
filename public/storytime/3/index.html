@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>שעת סיפור</title>
+<link href="styles.css" rel="stylesheet" type="text/css"> 
+</head>
+<body>
+<center>
+<h1>שעת סיפור 3</h1>
+<p>הנכם נמצאים באתר אשר נראה הכי גרוע מבין שלושת אתרי שעת הסיפור, עמכם הסליחה. אך אתר זה בא ללמד אותכם נושא מאוד חשוב בתחום התכנות</p>
+<video id="vid" width="800" controls>
+  <source src="https://firebasestorage.googleapis.com/v0/b/mehunanim3.appspot.com/o/3%2Fmangal.mp4?alt=media&token=78bf3bb7-dc43-4d18-934e-aa9861fe8012" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+<br>
+	</center>
+<div dir="rtl">
+<h1>תיבות טקסט:</h1>
+	כמה סטייקים לגאודה?
+ <input type="text" id="stakes" name="check">
+	<button class="button" type="button" onclick="checkStake()">שלח אוכל לגאודה</button>
+	<br>
+		<br>
+		כמה נקניקיות לפרמז'ן?
+ <input type="text" id="hotdogs" name="check">
+	<button class="button" type="button" onclick="checkHotdog()">שלח אוכל לפרמז'ן</button>
+<br>
+	<br>
+		כמה פרגיות לאדון פטה?
+ <input type="text" id="pargiot" name="check">
+	<button class="button" type="button" onclick="checkPargit()">שלח אוכל לאדון פטה</button>
+	<br><br>
+	
+	<h1> לאחר שהתנסתם, יש לרשום כאן למטה לפי דעתכם מהו מוסר ההשכל מהסיפור ואיזה נושא הוא ממחיש לנו בתכנות וללחוץ שלח. תגובותיכם יתפרסמו בפומבי. </h1>
+	<textarea id="writequest" rows="15" cols="50">
+
+</textarea>
+	<br>
+	<button class="button" type="button" onclick="sendDesc()">שלח</button>
+</div>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAnYkhukEAoJQKldLZgBdrjQcOl4eYVAC0",
+    authDomain: "mehunanim.firebaseapp.com",
+    databaseURL: "https://mehunanim.firebaseio.com",
+    projectId: "mehunanim",
+    storageBucket: "mehunanim.appspot.com",
+    messagingSenderId: "84243471556",
+    appId: "1:84243471556:web:e7404079ce4bf16abffd91"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+	
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script src="2.js"></script>
+</body>
+</html>

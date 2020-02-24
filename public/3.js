@@ -55,8 +55,8 @@ function send(){
 			 	var firebaseRef = firebase.database().ref('teams/');
 	firebaseRef.once('value', function(snapshot) {
   if (snapshot.hasChild(nameteam)) {
-	var aa = snapshot.child(nameteam).val();
-    firebaseRef.child(nameteam).set(++aa);
+	var aa = snapshot.child(nameteam).child('points').val();
+    firebaseRef.child(nameteam).child("points").set(++aa);
 	  document.getElementById("pointb").style.display="none"
 	  setTimeout(function () {
    window.location.reload(true);

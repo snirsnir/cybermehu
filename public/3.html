@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>משימה מספר 3</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="accordian.pack.js"></script>
+</head>
+
+<body style="background-color:lightcoral;" onload="new Accordian('basic-accordian',5,'header_highlight');">
+  <div id="logo"><h1>Technoda&Cyber</h1></div>
+  <div id="basic-accordian" dir="rtl" >
+	  <center>
+    <div id="test-header" class="accordion_headings header_highlight">הצפנות</div></center>
+    <div id="test-content">
+      <div class="accordion_child">
+        <center><h1>מידע על הצפנות</h1></center>
+        לאונרדו דה וינצ'י, איש האשכולות האיטלקי היה נוהג לכתוב בכתב ראי, כמה השערות עלו למה עשה זאת ואחת ההשערות היא שרצה להקשות על אחרים לקרוא את הכתוב - מדובר בהצפנה בסיסית.
+גם בעולם המחשבים משתמשים לא מעט בהצפנה, בין היתר כדי להקשות על אחרים לגשת למידע אישי. וואצאפ, פייסבוק ושאר הרשתות החברתיות מעבירות על המידע האישי שלנו תהליך הצפנה מורכב ביותר כדי שהמידע יישאר אישי גם אם המידע מגיע לידיים הלא נכונות.
+		  <br><br><br>
+		  <center>
+		  <h1>בלשוניות למטה קיימים 3 משפטים מוצפנים, עליכם לזהות את המשפטים ולרשום אותם בתיבת הטקסט כאן למטה. במידה ותפענחו את שלושת המשפטים, תקבלו נקודה ותוכלו לעבור לעמדה הבאה</h1>
+			  <br><br> 
+			פתרון של הצפנה מסוג 1  <input type="text" id="one" name="check" size="50">
+			  <br><br> 
+			  <p style="visibility: hidden" id="onet"></p>
+			   <br><br> 
+			  פתרון של הצפנה מסוג 2  <input type="text" id="two" name="check" size="50">
+			   <br><br> 
+			   <p style="visibility: hidden" id="twot"></p>
+			  <br><br> 
+			  פתרון של הצפנה מסוג 3  <input type="text" id="three" name="check" size="50">
+			  <br><br>
+			  <p style="visibility: hidden" id="threet"></p>
+			  <br><br> 
+			 שם הקבוצה  <input type="text" id="namet" name="check" >
+			  <br><br>
+			  <button class="button" id="pointb" type="button" onclick="send()">שלח</button>
+			  <br><br>
+			  <p style="visibility: hidden" id="error"></p>
+			  <br><br><br><br>
+          </center>
+      </div>
+    </div>
+     <center><div id="test1-header" class="accordion_headings">הצפנה מסוג 1</div></center>
+    <div id="test1-content">
+      <div class="accordion_child">
+		<center><h1>שר לבתש טתזל נעצךר כלזמ בהנ משבזא בא ולזלגכנ</h1></center>
+      </div>
+    </div>
+   <center> <div id="test2-header" class="accordion_headings">הצפנה מסוג 2</div></center>
+    <div id="test2-content">
+      <div class="accordion_child">
+		 <center> <h1>1:50:8:50:6: :10:6:4:70:10:40: :40:5: :1:50:8:50:6: :1:20: :30:1: :40:5: :5:10:10:50:6: :10:20:6:30:10:40: :30:5:10:6:400: </h1></center>
+   	
+        
+      </div>
+    </div>
+    <center><div id="test3-header" class="accordion_headings">הצפנה מסוג 3</div></center>
+    <div id="test3-content">
+      <div class="accordion_child">
+     <center><h1>תובהלתה דבאל ילבמ ןולשיכל ןולשיכמ רובעל הז החלצה</h1></center>
+      </div>
+    </div>
+ 
+  <div id="footer">
+	  <p>SnirDoani &copy;</p>
+  </div>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+<script>
+  //FIREBASE
+  var firebaseConfig = {
+    apiKey: "AIzaSyD-KbbezOu-5UJFKmU9tC1a8VND74GiB5g",
+    authDomain: "mehunanim3.firebaseapp.com",
+    databaseURL: "https://mehunanim3.firebaseio.com",
+    projectId: "mehunanim3",
+    storageBucket: "mehunanim3.appspot.com",
+    messagingSenderId: "52818153094",
+    appId: "1:52818153094:web:4790603e9ff93f89dd4b07",
+    measurementId: "G-DJDJ2MPLPL"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script src="3.js"></script>
+</body>
+</html>
