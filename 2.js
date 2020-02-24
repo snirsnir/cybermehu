@@ -33,6 +33,7 @@ fireScreen = firebase.database().ref();
 fireScreen.once('value', function(snapshot) {
   if ( a == snapshot.child("code2").val()) { 
 alert("כל הכבוד, קיבלתם נקודה! בעוד מספר שניות המערכת תבצע ריענון לדף, יש לעבור לתחנה הבאה")
+	  document.getElementById("pointb").style.display="none"
 	 	var firebaseRef = firebase.database().ref('teams/');
 	firebaseRef.once('value', function(snapshot) {
   if (snapshot.hasChild(namet)) {
@@ -43,9 +44,12 @@ alert("כל הכבוד, קיבלתם נקודה! בעוד מספר שניות ה
 }, 8000);
 }
 	else {
-alert("טעות, נסה שוב")
+alert("טעות, נסו שוב")
 	}
 } )
 }
+	else {
+		alert("טעות, נסו שוב")
+	}
 })
 }

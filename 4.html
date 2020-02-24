@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>משימה מספר 4</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="accordian.pack.js"></script>
+</head>
+
+<body style="background-color:dimgray;" onload="new Accordian('basic-accordian',5,'header_highlight');">
+  <div id="logo"><h1>Technoda&Cyber</h1></div>
+  <div id="basic-accordian" dir="rtl" >
+	  <center>
+    <div id="test-header" class="accordion_headings header_highlight">אחסון מידע רגיש</div></center>
+    <div id="test-content">
+      <div class="accordion_child">
+      <p>
+		  כאשר אנו מעוניינים לשמור מידע רגיש אנו נרצה לאחסן זאת במקום מאוד מאובטח כי אחרת, יוכלו לגלות לנו את הפרטיים האישיים. בין אם זה סיסמאות או מידע אישי אחר.
+באחת התיקיות במחשב בכונן המקומי (C) מושתל קובץ סיסמאות, שבאמצעות חיפוש קליל בשורת החיפוש יהיה ניתן להגיע אליו.
+משימתכם היא למצוא את קובץ הטקסט, לפתוח אותו ולהתקדם ללשונית הבאה.
+
+		  </p>
+      </div>
+    </div>
+     <center><div id="test1-header" class="accordion_headings">מצאתם את הקובץ? המשיכו לכאן</div></center>
+    <div id="test1-content">
+      <div class="accordion_child">
+		  <p><b>
+		  אם הגעתם לכאן סימן שמצאתם את הקובץ, נהדר!
+			  כעת נלמד כיצד יוצרים תיקיה מוסתרת על מנת להגן על הקובץ היקר ערך שלנו
+		  </p></b>
+		  <p>
+		  1. היכנסו לכל כונן שתרצו במחשב ופתחו תיקייה חדשה (מקש ימני בעכבר-->תיקייה חדשה). 
+</p> <p>
+2. העבירו את קובץ הסיסמאות אל התיקיה החדשה.
+</p><p>
+3. כעת לחצו על מקש חזרה אחורה הנמצא למעלה מימין בסייר. לחצו על התיקיה שברצוננו להפוך למוסתרת מקש ימני--> לחצו מאפיינים--> בלשונית "כללי" בתחתית יש אפשרות בשם "מוסתר" --> סמנו את האפשרות וכעת לחצו אישור, כעת התיקייה הפכה לנסתרת.
+		  </p>
+      </div>
+    </div>
+   <center> <div id="test2-header" class="accordion_headings">הקובץ בתיקיה המוסתרת? זה המקום!</div></center>
+    <div id="test2-content">
+      <div class="accordion_child">
+		  <p>
+		  הסתרנו את התיקיה ואת הקובץ, איזה כיף לנו! אבל רגע... התיקיה נעלמה ואין לנו גישה אליה כלל וכלל
+			 אוי ואבוי...
+
+		  </p>
+		   <p>
+		  אל חשש, כל שעליכם לעשות זה להשלים את המשך הנתיב באופן ידני בשורת הכתובות של הסייר
+			 נניח ואנחנו נמצאים ב 
+		  :
+		  </p>
+		  <p> C:\Program Files (x86)\Adobe </p>
+		  <p>
+		והתיקיה המוסתרת נמצאת בנתיב:
+			  C:\Program Files (x86)\Adobe\password
+		  </p>
+		  <p>כל שעליכם לעשות זה לכתוב את התוספת לנתיב המלא,
+		  במקרה שלנו, להוסיף 
+		  </p>
+		  <p>password\</p>
+		  <p>דוגמא בסרטון הבא:</p>
+		   <video id="vid" width="800" controls>
+  <source src="https://firebasestorage.googleapis.com/v0/b/mehunanim3.appspot.com/o/4.mp4?alt=media&token=0a0dd3e5-94f2-4c66-8302-f581627aa6a1" type="video/mp4">
+      </div>
+    </div>
+    <center><div id="test3-header" class="accordion_headings">סיכום וקבלת ניקוד</div></center>
+    <div id="test3-content">
+      <div class="accordion_child">
+      <p>
+	  לאחר שביצעם הסתרה לקובץ הסיסמאות, בכדי לאמת זאת
+עליכם לרשום בתיבת הטקסט כאן למטה מהי האפשרות הצמודה לאפשרות "מוסתר" במאפייני הקובץ 
+		  </p>
+		  <center> 
+			   תשובה  <input type="text" id="ans" name="check" >
+			  <br><br>
+			 שם הקבוצה  <input type="text" id="namet" name="check" >
+			  <br><br>
+			  <button class="button" id="pointb" type="button" onclick="send()">שלח</button>
+			  <br><br>
+			  <p style="visibility: hidden" id="error"></p>
+			  <br><br><br><br>
+			  </center>
+      </div>
+    </div>
+ 
+  <div id="footer">
+	  <p>SnirDoani &copy;</p>
+  </div>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+<script>
+  //FIREBASE
+  var firebaseConfig = {
+    apiKey: "AIzaSyD-KbbezOu-5UJFKmU9tC1a8VND74GiB5g",
+    authDomain: "mehunanim3.firebaseapp.com",
+    databaseURL: "https://mehunanim3.firebaseio.com",
+    projectId: "mehunanim3",
+    storageBucket: "mehunanim3.appspot.com",
+    messagingSenderId: "52818153094",
+    appId: "1:52818153094:web:4790603e9ff93f89dd4b07",
+    measurementId: "G-DJDJ2MPLPL"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script src="4.js"></script>
+</body>
+</html>

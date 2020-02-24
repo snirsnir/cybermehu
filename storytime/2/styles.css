@@ -1,0 +1,26 @@
+body {
+	background-color: springgreen;
+	}
+	h1 , p {
+  background-color: pink;
+  font-size: 30px;
+}
+#dead {
+ visibility: hidden;
+}
+#alive {
+  visibility: hidden;
+}
+
+.button {
+  background-color: #CB4E7C; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
