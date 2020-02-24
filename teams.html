@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>רישום הקבוצות</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="accordian.pack.js"></script>
+</head>
+
+<body style="background-image: url('https://firebasestorage.googleapis.com/v0/b/mehunanim3.appspot.com/o/pic%2Frishum.jpg?alt=media&token=76f0299d-78c2-4553-a056-16bbf8a680fd');" onload="new Accordian('basic-accordian',5,'header_highlight');">
+  <div id="logo"><h1>Technoda&Cyber</h1></div>
+  <div id="logo"><h1>מערכת רישום לפעילות</h1></div>
+  <div dir="rtl">
+	  <br><br> <br><br>
+	  <center>
+	<h1 id="logo2"><font size="30" style="color:#CCC">שם הקבוצה - בעברית בלבד ללא רווחים </font> </h1>
+	  <input onkeypress="return /[א-ת]/i.test(event.key)" id="namet" style="font-size:25px" size="50" name="check" style="height:100px;" >
+		  <br><br><br><br>
+		  <button class="button" id="pointb" type="button" style="font-size : 20px; width: 30%; height: 50px;" onclick="send()">שלח</button>
+		  <p style="visibility: hidden" id="error"></p>
+		  </center>
+	</div>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+<script>
+  //FIREBASE
+  var firebaseConfig = {
+    apiKey: "AIzaSyD-KbbezOu-5UJFKmU9tC1a8VND74GiB5g",
+    authDomain: "mehunanim3.firebaseapp.com",
+    databaseURL: "https://mehunanim3.firebaseio.com",
+    projectId: "mehunanim3",
+    storageBucket: "mehunanim3.appspot.com",
+    messagingSenderId: "52818153094",
+    appId: "1:52818153094:web:4790603e9ff93f89dd4b07",
+    measurementId: "G-DJDJ2MPLPL"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script src="teams.js"></script>
+</body>
+</html>
